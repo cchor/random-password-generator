@@ -14,12 +14,23 @@ function writePassword() {
 
   passwordText.value = password;
 
-
 }
+
+
 
 function generatePassword() {
-  var 
+  
 }
+// choose password criteria
+window.alert("How many charaters would you like?");
+window.alert("Would you like to include upper case letters?");
+window.alert("Would you like to include lower case letters?");
+window.alert("Would you like to include numbers letters?");
+window.alert("Would you like to include special characters?");
+if (upperCase) {
+  password = password.upperCase;
+}
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
