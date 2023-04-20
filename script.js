@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
@@ -16,18 +16,20 @@ function writePassword() {
 
 }
 
-// (pwLength < 8 || pwLength > 128)
 
 function generatePassword() {
  // choose password criteria
 var pwLength = prompt("How many characters would you like? Between 8 and 128");
+
 // validation for length between 8 and 128
-if (pwLength < 8 || pwLength > 128);
-  promt("Select between 8 and 128 characters");
-
-
-
-
+var pwLength = parseInt(prompt("How many characters would you like? Between 8 and 128"));
+  // prompt("Select between 8 and 128 characters");
+  if (!pwLength) {
+          alert("This needs a value");
+      } else if (enter < 8 || enter > 128) {
+  
+          pwLength = parseInt(prompt("You must choose between 8 and 128"));
+      
 // confirm if upper case letters should be included
 if (confirm("Would you like to include upper case letters?")); 
 //
@@ -41,7 +43,7 @@ if (confirm("Would you like to include numbers?"));
 if (confirm("Would you like to include special characters?"));
 
 
-
+      };
  
 var password = "Password to be generated" // this should be generated dynamically from the above code
 return pwLength;
