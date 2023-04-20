@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
+var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 
@@ -16,20 +16,37 @@ function writePassword() {
 
 }
 
-
+// (pwLength < 8 || pwLength > 128)
 
 function generatePassword() {
-  
+ // choose password criteria
+var pwLength = prompt("How many characters would you like? Between 8 and 128");
+// validation for length between 8 and 128
+if (pwLength < 8 || pwLength > 128);
+  promt("Select between 8 and 128 characters");
+
+
+
+
+// confirm if upper case letters should be included
+if (confirm("Would you like to include upper case letters?")); 
+//
+// confirm if lower case letters should be included
+if (confirm("Would you like to include lower case letters?"));
+
+// confirm if numbers should be included
+if (confirm("Would you like to include numbers?"));
+
+// confirm if special characters should be included
+if (confirm("Would you like to include special characters?"));
+
+
+
+ 
+var password = "Password to be generated" // this should be generated dynamically from the above code
+return pwLength;
 }
-// choose password criteria
-window.alert("How many charaters would you like?");
-window.alert("Would you like to include upper case letters?");
-window.alert("Would you like to include lower case letters?");
-window.alert("Would you like to include numbers letters?");
-window.alert("Would you like to include special characters?");
-if (upperCase) {
-  password = password.upperCase;
-}
+
 
 
 // Add event listener to generate button
