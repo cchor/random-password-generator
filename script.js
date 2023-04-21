@@ -10,18 +10,29 @@ var pwReturn = "";
 
 function generatePassword(length) {
 
-  var password ="";
-  var passwordCharacter ="";
-  var randomPw = "";
-  var pwReturn = "";
-
+  // var password ="";
+  // var passwordCharacter ="";
+  // var randomPw = "";
+  // var pwReturn = "";
+var minlength = 8;
+var maxlength = 128;
 
   // how many characters
   prompt("How many characters? 8 to 128")
-  // verify character count
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert("Your password is not between 8 and 128 characters");
-    var passwordLength = prompt("Try again");
+  // verify character count found on https://www.w3resource.com/javascript/form/string-length.php
+  function stringlength(inputtxt, minlength, maxlength)
+  { 
+  var field = inputtxt.value; 
+  var mnlen = minlength;
+  var mxlen = maxlength;
+  
+  if(field.length< 8 || field.length> 128)
+  { 
+  alert("Please input the userid between " +mnlen+ " and " +mxlen+ " characters");
+  return false;
+  }
+
+}
 }
   // uppercase?
   var upperCaseconfirm = ("Include upper case?");
@@ -32,32 +43,32 @@ function generatePassword(length) {
   // special characters?
   var specialCharactersconfirm = ("Include special characters?");
 
-  if (upperCaseconfirm) {
-    pwReturn += upperCase;
-}
+//   if (upperCaseconfirm) {
+//     pwReturn += upperCase;
+// }
 
-  if (lowerCaseconfirm) {
-    pwReturn += lowerCase;
-}
+//   if (lowerCaseconfirm) {
+//     pwReturn += lowerCase;
+// }
 
-if (numbersConfirm) {
-  pwReturn += number;
-}
+// if (numbersConfirm) {
+//   pwReturn += number;
+// }
 
-if (specialCharactersconfirm) {
-  pwReturn += specialCharacter;
-}
+// if (specialCharactersconfirm) {
+//   pwReturn += specialCharacter;
+// }
 
-// Generates a random password based on the criteria that have been selected
-for (var i = 0; i < passwordLength; i++) {
-    // Continues to select a random character value from the string until it is the desired length
-    randomPw += pwReturn.charAt(Math.floor(Math.random() * pwReturn.length));
-}
-password.value = pwReturn;
+// // Generates a random password based on the criteria that have been selected
+// for (var i = 0; i < passwordLength; i++) {
+//     // Continues to select a random character value from the string until it is the desired length
+//     randomPw += pwReturn.charAt(Math.floor(Math.random() * pwReturn.length));
+// }
+// password.value = pwReturn;
 
-return "generated" 
+// return "generated" 
 
-}
+// }
 
 
 // Write password to the #password input - given info
