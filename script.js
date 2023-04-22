@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 var password = document.querySelector("#password");
 
+// character variables
 var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
@@ -11,12 +12,14 @@ var newPassword = [];
 
 
 function generatePassword() {
+  // variables for question prompts
   var charCount = prompt("How many characters? 8 to 128");
   var upperChoice = confirm("Would you like to include upper case letters?"); 
   var lowerChoice = confirm("Include lower case letters?");
   var symbolChoice = confirm("Include symbols?");
   var numberChoice = confirm("Include numbers?");
 
+  // conditional statements for questions
   if (upperChoice) {
     newPassword = upperCase;
   }
@@ -31,6 +34,12 @@ function generatePassword() {
 
 if (number){
   newPassword = newPassword.concat(number);
+}
+
+// variable to generate random characters (isn't working)
+for (var i = 0; i < newPassword; i ++) {
+
+  newPassword [Math.floor(Math.random() * newPassword.length)];
 }
 
 return newPassword;
