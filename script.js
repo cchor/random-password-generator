@@ -18,6 +18,8 @@ function generatePassword() {
   var lowerChoice = confirm("Include lower case letters?");
   var symbolChoice = confirm("Include symbols?");
   var numberChoice = confirm("Include numbers?");
+  
+  parseInt(document.getElementById("#password").value);
 
   // conditional statements for questions
   if (upperChoice) {
@@ -29,15 +31,15 @@ function generatePassword() {
   }
 
   if (specialCharacter){
-    newPassword = newPassword.concat(specialCharacter);
+    newPassword = newPassword.concat(symbolChoice);
 }
 
-if (number){
+if (numberChoice){
   newPassword = newPassword.concat(number);
 }
 
 // variable to generate random characters (isn't working)
-for (var i = 0; i < newPassword; i ++) {
+for (let i = 0; i < newPassword.length; i ++) {
 
   newPassword [Math.floor(Math.random() * newPassword.length)];
 }
