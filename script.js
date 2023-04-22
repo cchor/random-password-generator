@@ -6,22 +6,34 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o",  "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var specialCharacter = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", " < ", "=", " > ", " ? ", "@", "[", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var pwReturn = "";
+
+var newPassword = [];
+
 
 function generatePassword() {
-  var userChoice = window.prompt("How many characters? 8 to 128");
-  // if (userChoice< 8 || userChoice> 128);
-  // alert("Please choose between 8 and 128 characters");
-  
-  // } else if {
-    // if (userChoice> 8 || userChoice< 128);
-    confirm("Would you like to include upper case letters?"); 
- 
-    confirm("Include lower case letters?");
+  var charCount = prompt("How many characters? 8 to 128");
+  var upperChoice = confirm("Would you like to include upper case letters?"); 
+  var lowerChoice = confirm("Include lower case letters?");
+  var symbolChoice = confirm("Include symbols?");
+  var numberChoice = confirm("Include numbers?");
 
-    confirm("Include numbers?");
+  if (upperChoice) {
+    newPassword = upperCase;
+  }
 
-    confirm("Include symbols");
+  if (lowerChoice) {
+    newPassword = newPassword.concat(lowerCase);
+  }
+
+  if (specialCharacter){
+    newPassword = newPassword.concat(specialCharacter);
+}
+
+if (number){
+  newPassword = newPassword.concat(number);
+}
+
+return newPassword;
 
 }
  
@@ -33,9 +45,13 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  
+
   passwordText.value = password;
 
+
 }
+
 
 
 // Add event listener to generate button - given info
