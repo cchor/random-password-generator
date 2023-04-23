@@ -13,20 +13,22 @@ var newPassword = [];
 
 function generatePassword() {
 
-  if(charCount < 8 || charCount > 128)
-{
-generatePassword();
-}
+
   // variables for question prompts
   var charCount = prompt("How many characters? 8 to 128");
   var upperChoice = confirm("Would you like to include upper case letters?"); 
   var lowerChoice = confirm("Include lower case letters?");
   var symbolChoice = confirm("Include symbols?");
   var numberChoice = confirm("Include numbers?");
-  
-  // parseInt(document.getElementById("#password").value);
 
-  
+if(charCount < 8 || charCount > 128);
+{
+  // parseInt(document.getElementById("#password").value);
+// keeps rotating through the questions and never gives a password
+// generatePassword(); 
+
+
+}
   // conditional statements for questions
   if (upperChoice) {
     newPassword = upperCase;
@@ -44,20 +46,15 @@ if (numberChoice){
   newPassword = newPassword.concat(number);
 }
 
-// variable to generate random characters (isn't working)
-// for (let i = 0; i < newPassword.length; i ++) {
-
-//   newPassword =[Math.floor(Math.random() * newPassword.length)];
-// }
-var pwd = [];
-for (let i = 0; i < charCount; i ++) {
-   pwd.push(newPassword[Math.floor(Math.random() * newPassword.length)]);
+if (number){
+  newPassword = newPassword.concat(number);
 }
 
-return pwd;
+newPassword = [Math.floor(Math.random() * newPassword.length)];
+
+return newPassword;
 
 }
- 
 
 
 
@@ -66,14 +63,15 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  
-
   passwordText.value = password;
-
 
 }
 
 
-
 // Add event listener to generate button - given info
 generateBtn.addEventListener("click", writePassword);
+
+
+
+
+
